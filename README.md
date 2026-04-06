@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# C.O.M.A. Primeiro (Protótipo)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Coma O Meu Amigo Primeiro**
 
-Currently, two official plugins are available:
+Em Vale dos Espertos, sobreviver nunca é uma questão de coragem. É uma questão de timing, recurso e disposição para ver até onde sua história consegue ir antes que o monstro a interrompa.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este é um protótipo de jogo desenvolvido com React, Vite e Shadcn UI, focado em uma experiência de sobrevivência por turnos com mecânicas de gerenciamento de recursos (bistecas e cachorros).
 
-## React Compiler
+## 🚀 Como Executar o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
-## Expanding the ESLint configuration
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. **Acesse no navegador:**
+   O Vite geralmente inicia o projeto em `http://localhost:5173`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologias Utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Core**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Estilização**: Tailwind CSS 4.0 (com `@tailwindcss/vite`)
+- **UI Components**: Shadcn UI (Radix UI)
+- **Animações**: Framer Motion
+- **Ícones**: Lucide React
+
+## 📂 Estrutura do Projeto
+
+```text
+coma/
+├── src/
+│   ├── assets/             # Ativos estáticos (imagens, svgs)
+│   ├── components/
+│   │   ├── ui/             # Componentes base do Shadcn UI (Card, Button, etc.)
+│   │   └── Coma.tsx        # Lógica principal e interface do jogo
+│   ├── lib/
+│   │   └── utils.ts        # Utilitários (cn para tailwind-merge)
+│   ├── App.tsx             # Componente raiz
+│   ├── main.tsx            # Ponto de entrada do React
+│   └── index.css           # Configurações globais do Tailwind e Shadcn
+├── public/                 # Arquivos públicos estáticos
+├── components.json         # Configuração do Shadcn UI
+├── tsconfig.json           # Configurações do TypeScript
+└── vite.config.ts          # Configuração do Vite e aliases (@/)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎮 Modos de Jogo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Modo Solo**: Construa uma vida em 15 vitórias, administre cachorro e bistecas, e tente chegar à velhice.
+- **Modo Duelo**: Dois jogadores, dois destinos, uma última chance de superar a marca do rival quando a morte chegar.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 Licença
+
+Este projeto é um protótipo para fins de demonstração e estudo.

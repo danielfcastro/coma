@@ -1,10 +1,10 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Heart, Drumstick, Dog, Users, Baby, Sparkles, Skull, RotateCcw, Flag, Home, Gem, Swords } from "lucide-react";
+import { Heart, Drumstick, Dog, Users, Baby, Skull, RotateCcw, Flag, Home, Gem, Swords } from "lucide-react";
 
 const STAGES = [
   { min: 0, label: "Sobrevivente", icon: Flag },
@@ -121,7 +121,7 @@ export default function Coma() {
   const [decision, setDecision] = useState<null | { type: "monster"; canDog: boolean; canSteak: boolean }>(null);
 
   const active = mode === "solo" ? game : players[currentPlayer];
-  const opponent = mode === "duelo" ? players[currentPlayer === 0 ? 1 : 0] : null;
+  // const opponent = mode === "duelo" ? players[currentPlayer === 0 ? 1 : 0] : null;
   const stage = useMemo(() => getStage(active.wins), [active.wins]);
   const progressValue = Math.min((active.wins / 15) * 100, 100);
   const currentStageIndex = STAGES.reduce((acc, s, idx) => (active.wins >= s.min ? idx : acc), 0);
