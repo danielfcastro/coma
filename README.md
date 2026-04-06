@@ -8,7 +8,32 @@ Este é um protótipo de jogo desenvolvido com React, Vite e Shadcn UI, focado e
 
 ## 🚀 Como Executar o Projeto
 
-Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+Este projeto requer o [Node.js](https://nodejs.org/) (recomendado v18.0.0 ou superior).
+
+### 1. Instalação do Node.js
+
+Recomendamos o uso de um gerenciador de versões para facilitar a troca entre versões do Node:
+
+#### **Windows**
+1. Baixe e instale o [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
+2. Abra o terminal e execute:
+   ```bash
+   nvm install lts
+   nvm use lts
+   ```
+
+#### **macOS / Linux**
+1. Instale o [nvm](https://github.com/nvm-sh/nvm) executando:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+   ```
+2. Após reiniciar o terminal, instale a versão LTS:
+   ```bash
+   nvm install --lts
+   nvm use --lts
+   ```
+
+### 2. Configuração do Projeto
 
 1. **Instale as dependências:**
    ```bash
